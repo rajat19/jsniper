@@ -10,7 +10,7 @@
     "build": "tsc && shx rm -rf dist/templates && shx cp -r templates dist"
   },
   "bin": {
-    "tscli": "./dist/index.js"
+    "wakanda": "./dist/index.js"
   },
   "repository": {
     "type": "git",
