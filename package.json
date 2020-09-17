@@ -1,5 +1,5 @@
 {
-  "name": "ts-template",
+  "name": "wakanda",
   "version": "1.0.0",
   "description": "basic typescript template to start your coding",
   "main": "dist/index.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rajat19/ts-template.git"
+    "url": "git+https://github.com/rajat19/wakanda.git"
   },
   "author": "Rajat Srivastava",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rajat19/ts-template/issues"
+    "url": "https://github.com/rajat19/wakanda/issues"
   },
-  "homepage": "https://github.com/rajat19/ts-template#readme",
+  "homepage": "https://github.com/rajat19/wakanda#readme",
   "devDependencies": {
     "@types/ejs": "^3.0.4",
     "@types/inquirer": "^7.3.1",
