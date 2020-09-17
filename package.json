@@ -1,5 +1,5 @@
 {
-  "name": "wakanda",
+  "name": "@rajat19/jsniper",
   "version": "0.0.4",
   "description": "basic typescript template to start your coding",
   "main": "dist/index.js",
@@ -10,18 +10,18 @@
     "build": "tsc && shx rm -rf dist/templates && shx cp -r templates dist"
   },
   "bin": {
-    "wakanda": "./dist/index.js"
+    "jsniper": "./dist/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rajat19/wakanda.git"
+    "url": "git+https://github.com/rajat19/jsniper.git"
   },
   "author": "Rajat Srivastava",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rajat19/wakanda/issues"
+    "url": "https://github.com/rajat19/jsniper/issues"
   },
-  "homepage": "https://github.com/rajat19/wakanda#readme",
+  "homepage": "https://github.com/rajat19/jsniper#readme",
   "devDependencies": {
     "@types/ejs": "^3.0.4",
     "@types/inquirer": "^7.3.1",
