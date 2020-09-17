@@ -18,24 +18,26 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10
-      - run: npm build
-#       - run: npm test
+      - run: npm i
+      - run: npm run build
+      - run: npm test
 
-  # publish-npm:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 10
-  #         registry-url: https://registry.npmjs.org/
-  #         scope: '@rajatsriv'
-  #     - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-  #     - run: npm build
-  #     - run: npm publish --access public
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+          registry-url: https://registry.npmjs.org/
+      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+      - run: npm i
+      - run: npm run renpack
+      - run: npm run build
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   publish-gpr:
     needs: build
@@ -48,7 +50,8 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@rajat19'
       - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
-      - run: npm build
+      - run: npm i
+      - run: npm run build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
