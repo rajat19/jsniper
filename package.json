@@ -1,6 +1,6 @@
 {
-  "name": "wakanda",
-  "version": "1.0.0",
+  "name": "@rajat19/wakanda",
+  "version": "0.0.3",
   "description": "basic typescript template to start your coding",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
