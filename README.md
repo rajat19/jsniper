@@ -1,9 +1,9 @@
-# wakanda
-basic typescript templating script to start your coding with typescript
+# jsniper
+basic templating script to start your coding with typescript/javascript
 
 ## Install
 ```
-npm i -g tscli
+npm i -g jsniper
 ```
 
 ## How to run this project
@@ -11,5 +11,5 @@ npm i -g tscli
 - Then run following commands 
 ```
 npm run build && npm link
-wakanda
+jsniper
 ```
