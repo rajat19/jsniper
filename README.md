@@ -1,4 +1,4 @@
-# ts-cli
+# wakanda
 basic typescript templating script to start your coding with typescript
 
 ## Install
@@ -11,5 +11,5 @@ npm i -g tscli
 - Then run following commands 
 ```
 npm run build && npm link
-tscli
+wakanda
 ```
