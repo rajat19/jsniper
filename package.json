@@ -1,6 +1,6 @@
 {
   "name": "@rajat19/jsniper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "basic typescript template to start your coding",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

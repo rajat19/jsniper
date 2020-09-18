@@ -32,7 +32,7 @@ jobs:
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - run: npm i
       - run: npm run renpack
-      - run: npm run build
+      - run: npm run build && npm run link
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
@@ -49,7 +49,7 @@ jobs:
           scope: '@rajat19'
       - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
       - run: npm i
-      - run: npm run build
+      - run: npm run build && npm run link
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
