@@ -11,11 +11,15 @@ inquirer.prompt(QUESTIONS)
     const projectChoice = answers['template'];
     const projectName = answers['name'];
     const projectDescription = answers['description'];
+    const projectGitUrl = answers['repository'];
+    const projectAuthor = answers['author'];
     const templatePath = path.join(__dirname, 'templates', projectChoice);
     const targetPath = path.join(CURR_DIR, projectName);
     const options: CliOptions = {
         projectName,
         projectDescription,
+        projectGitUrl,
+        projectAuthor,
         templateName: projectChoice,
         templatePath,
         targetPath
@@ -27,6 +31,6 @@ inquirer.prompt(QUESTIONS)
         return;
     }
 
-    const templateData: TemplateData = {projectName, projectDescription};
+    const templateData: TemplateData = {projectName, projectDescription, projectGitUrl, projectAuthor};
     createDirectoryContents(templatePath, templateData);
 });

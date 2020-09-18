@@ -4,6 +4,8 @@ import * as path from 'path';
 export interface CliOptions {
     projectName: string
     projectDescription: string
+    projectGitUrl: string
+    projectAuthor: string
     templateName: string
     templatePath: string
     targetPath: string
@@ -27,4 +29,14 @@ export const QUESTIONS = [
     name: 'description',
     type: 'input',
     message: 'Project Description'
+},
+{
+    name: 'repository',
+    type: 'input',
+    message: 'Git Repository'
+},
+{
+    name: 'author',
+    type: 'input',
+    message: 'Author'
 }];

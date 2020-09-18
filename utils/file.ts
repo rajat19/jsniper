@@ -49,7 +49,7 @@ export function createDirectoryContents(templatePath: string, templateData: Temp
         if (stats.isFile()) {
             // read file content and transform it using template engine
             let contents: string = fs.readFileSync(origFilePath, 'utf8');
-            contents = render(contents, { projectName, projectDescription });
+            contents = render(contents, templateData);
             // write file to destination folder
             const writePath: string = path.join(CURR_DIR, projectName, file);
             fs.writeFileSync(writePath, contents, 'utf8');
@@ -57,10 +57,8 @@ export function createDirectoryContents(templatePath: string, templateData: Temp
             // create folder in destination folder
             fs.mkdirSync(path.join(CURR_DIR, projectName, file));
             // copy files/folder inside current folder recursively
-            const tData: TemplateData = {
-                projectDescription,
-                projectName: path.join(projectName, file)
-            };
+            const tData: TemplateData = Object.assign({}, templateData);
+            tData.projectName = path.join(projectName, file);
             createDirectoryContents(path.join(templatePath, file), tData);
         }
     });
