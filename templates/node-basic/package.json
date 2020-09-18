@@ -1,0 +1,34 @@
+{
+    "name": "<%= projectName %>",
+    "version": "1.0.0",
+    "description": "<%= projectDescription %>",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app",
+      "lint": "eslint --fix ."
+    },
+    "pre-commit": [
+      "lint"
+    ],
+    "engines": {
+      "node": ">=8.17.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "<%= projectGitUrl %>"
+    },
+    "author": "<%= projectAuthor %>",
+    "license": "MIT",
+    "dependencies": {
+      "koa": "^2.7.0",
+      "koa-body": "^4.1.0",
+      "koa-mount": "^4.0.0",
+      "koa-router": "^7.4.0"
+    },
+    "devDependencies": {
+      "eslint": "^5.9.0",
+      "jshint": "^2.9.5",
+      "pre-commit": "^1.2.2"
+    }
+  }
+  

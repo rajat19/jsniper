@@ -1,0 +1,48 @@
+type User {
+	id: ID,
+	name: String,
+	username: String,
+	password: String,
+	country: String,
+	email: String,
+	phone: String,
+	image: String,
+	contacts: [Contact],
+	temporaryUser: Boolean
+}
+
+extend type Query {
+	user(id: String!): User
+	users(
+		id: [String],
+		name: [String],
+		country: String,
+		limit: Int,
+		after: String,
+	): [User]
+}
+
+extend type Mutation {
+	createUser(
+		name: String!,
+		username: String!,
+		password: String!,
+		country: String!,
+		email: String!,
+		phone: String!,
+		image: String,
+	): User
+
+	updateUser(
+		id: String!,
+		name: String,
+		username: String,
+		password: String,
+		country: String,
+		email: String,
+		phone: String,
+		image: String,
+	): User
+
+	deleteUser(id: String!): String
+}
