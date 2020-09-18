@@ -1,15 +1,47 @@
 # jsniper
 basic templating script to start your coding with typescript/javascript
+You can add your own templates or can extend another templates inside your template
 
 ## Install
-```
-npm i -g jsniper
+There are two ways to install the cli (Do any one)
+
+- From npm registry
+```bash
+npm install -g jsniper
+jsniper
 ```
 
-## How to run this project
-- Create a new template in `templates` folder
-- Then run following commands 
+- From github registry
+```bash
+npm install -g @rajat19/jsniper
+jsniper
 ```
+
+## How to run this project (if you want to code)
+- Create a new template in `templates` folder or use already existing ones
+- Then run following commands 
+```bash
 npm run build && npm link
 jsniper
 ```
+
+## Extending templates
+A template can extend some other template as well
+You need to create a file `.extends.json` which just contains array with names of templates that needs to be copied from
+Check [.extends.json](templates/node-gql-mongo/.extends.json)
+
+This just contains
+```json
+[
+    "node-basic"
+]
+```
+
+
+## Publish
+This package uses github actions to publish to both npm as well as github registries
+Check `.github/workflows/npm-publish.yml` file for more details
+
+
+## Contributing
+You can contribute by adding new templates in templates folder
