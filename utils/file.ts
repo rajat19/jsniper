@@ -6,6 +6,7 @@ import * as template from './template';
 export const CURR_DIR = process.cwd();
 // list of file/folder that should not be copied
 const SKIP_FILES = ['node_modules', '.template.json'];
+const EXTEND_FILE_NAME = '.extends.json'
 
 export function createProject(projectPath: string) {
     if (fs.existsSync(projectPath)) {
@@ -33,10 +34,18 @@ export function createDirectoryContents(templatePath: string, projectName: strin
         if (stats.isFile()) {
             // read file content and transform it using template engine
             let contents = fs.readFileSync(origFilePath, 'utf8');
-            contents = template.render(contents, { projectName });
-            // write file to destination folder
-            const writePath = path.join(CURR_DIR, projectName, file);
-            fs.writeFileSync(writePath, contents, 'utf8');
+
+            if (file != EXTEND_FILE_NAME) {
+                contents = template.render(contents, { projectName });
+                // write file to destination folder
+                const writePath = path.join(CURR_DIR, projectName, file);
+                fs.writeFileSync(writePath, contents, 'utf8');
+            } else {
+                const extendContents: Array<string> = JSON.parse(contents);
+                extendContents.forEach((element: string) => {
+                    createDirectoryContents(path.join(path.dirname(templatePath), element), projectName);
+                });
+            }
         } else if (stats.isDirectory()) {
             // create folder in destination folder
             fs.mkdirSync(path.join(CURR_DIR, projectName, file));
