@@ -1,3 +1,12 @@
+![License](https://img.shields.io/npm/l/jsniper?style=for-the-badge)
+![Language](https://img.shields.io/github/languages/top/rajat19/jsniper?style=for-the-badge)
+![Dependencies](https://img.shields.io/david/rajat19/jsniper?style=for-the-badge)
+![Bundle Size](https://img.shields.io/bundlephobia/min/jsniper?label=BUNDLE%20SIZE&style=for-the-badge)
+![PR](https://img.shields.io/github/issues-pr/rajat19/jsniper?style=for-the-badge)
+![Release](https://img.shields.io/github/v/release/rajat19/jsniper?style=for-the-badge)
+![Node](https://img.shields.io/node/v/jsniper?style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/rajat19/jsniper?style=for-the-badge)
+
 # jsniper
 basic templating script to start your coding with typescript/javascript
 You can add your own templates or can extend another templates inside your template
