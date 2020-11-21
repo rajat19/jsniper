@@ -13,6 +13,7 @@ inquirer.prompt(QUESTIONS)
     const projectDescription = answers['description'];
     const projectGitUrl = answers['repository'];
     const projectAuthor = answers['author'];
+    const gitUsername = answers['gituser'];
     const templatePath = path.join(__dirname, 'templates', projectChoice);
     const targetPath = path.join(CURR_DIR, projectName);
     const options: CliOptions = {
@@ -20,6 +21,7 @@ inquirer.prompt(QUESTIONS)
         projectDescription,
         projectGitUrl,
         projectAuthor,
+        gitUsername,
         templateName: projectChoice,
         templatePath,
         targetPath
@@ -31,6 +33,6 @@ inquirer.prompt(QUESTIONS)
         return;
     }
 
-    const templateData: TemplateData = {projectName, projectDescription, projectGitUrl, projectAuthor};
+    const templateData: TemplateData = {projectName, projectDescription, projectGitUrl, projectAuthor, gitUsername};
     createDirectoryContents(templatePath, templateData);
 });

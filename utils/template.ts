@@ -4,6 +4,7 @@ export interface TemplateData {
     projectDescription: string
     projectGitUrl: string
     projectAuthor: string
+    gitUsername: string
 }
 export function render(content: string, data: TemplateData) {
     return ejs.render(content, data);

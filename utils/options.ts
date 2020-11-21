@@ -6,6 +6,7 @@ export interface CliOptions {
     projectDescription: string
     projectGitUrl: string
     projectAuthor: string
+    gitUsername: string
     templateName: string
     templatePath: string
     targetPath: string
@@ -39,4 +40,9 @@ export const QUESTIONS = [
     name: 'author',
     type: 'input',
     message: 'Author'
+},
+{
+    name: 'gituser',
+    type: 'input',
+    message: 'Git Username(for publishing to github packages)'
 }];
