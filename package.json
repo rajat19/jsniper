@@ -14,7 +14,7 @@
     "jsniper": "./dist/index.js"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=10.12.0"
   },
   "repository": {
     "type": "git",
